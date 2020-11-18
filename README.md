@@ -12,7 +12,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 Nepalwildlife package brings together a list of wild animals and plants
-found in Nepal. It contains of 1 tibble named `nepal_wildlife`.
+found in Nepal. It contains 1 tibble named `nepal_wildlife`.
 
 ## Installation
 
