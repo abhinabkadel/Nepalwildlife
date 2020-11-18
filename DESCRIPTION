@@ -1,16 +1,22 @@
 Package: Nepalwildlife
-Title: What the Package Does (One Line, Title Case)
+Title: Data of Wildlife found in Nepal
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Abhinab",
+           family = "Kadel",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "akadel@eoas.ubc.ca")
+Description: This package contains information on the wildlife species found within the political boundary of Nepal. 
+Source: https://mol.org/regions/?region=Nepal&regionid=2f3b667a-51b4-4aaa-be9b-005765b1be65&bounds=80.0601,26.3475,88.204,30.447
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Suggests: 
+    testthat
+Imports: 
+    tibble,
+    dplyr
