@@ -12,41 +12,33 @@ Nepalwildlife package brings together a list of wild animals and plants
 ## Installation
 
 You can install the released version of Nepalwildlife from
-[CRAN](https://CRAN.R-project.org) with:
+[Github](https://github.com/abhinabkadel/Nepalwildlife) with:
 
 ``` r
 install.packages("devtools")
+devtools::install("abhinabkadel/Nepalwildlife")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+How many species fall under different taxonomic groups in Nepal? Let’s
+solve it using the dataset:
 
 ``` r
-library(Nepalwildlife)
-## basic example code
+library(Nepalwildlife) 
+library(tidyverse)
+
+nepal_wildlife %>% 
+  count (`Taxonomic Group`)
+#> # A tibble: 8 x 2
+#>   `Taxonomic Group`        n
+#>   <chr>                <int>
+#> 1 Amphibians              58
+#> 2 Birds                  852
+#> 3 Butterflies             26
+#> 4 Conifers                23
+#> 5 Mammals                217
+#> 6 Reptiles                44
+#> 7 Sphingid moths         174
+#> 8 Turtles (non-marine)    15
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!

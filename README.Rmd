@@ -22,33 +22,22 @@ Nepalwildlife package brings together a list of wild animals and plants
 
 ## Installation
 
-You can install the released version of Nepalwildlife from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of Nepalwildlife from [Github](https://github.com/abhinabkadel/Nepalwildlife) with:
 
 ``` {r eval = FALSE}
 install.packages("devtools")
+devtools::install("abhinabkadel/Nepalwildlife")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+How many species fall under different taxonomic groups in Nepal? Let's solve it using the dataset:
 
-```{r example}
-library(Nepalwildlife)
-## basic example code
+```{r example, message = FALSE}
+library(Nepalwildlife) 
+library(tidyverse)
+
+nepal_wildlife %>% 
+  count (`Taxonomic Group`)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
