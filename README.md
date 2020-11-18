@@ -8,6 +8,7 @@
 <!-- badges: end -->
 
 Nepalwildlife package brings together a list of wild animals and plants
+found in Nepal. It contains of 1 tibble named `nepal_wildlife`.
 
 ## Installation
 

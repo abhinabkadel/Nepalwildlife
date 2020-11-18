@@ -1,0 +1,50 @@
+---
+title: "nepal_wildlife"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{nepal_wildlife}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+First, load the required packages:
+```{r setup}
+library(Nepalwildlife)
+library(dplyr)
+library(ggplot2)
+```
+
+Let's take a look at the dataset:
+```{r}
+# check the bottom and top rows
+head(nepal_wildlife)
+tail(nepal_wildlife)
+# take a glimpse at the overall dataset
+glimpse(nepal_wildlife)
+```
+
+We can calculate the number of species for each Taxonomic Group, and create a bar chart out of it
+```{r}
+nepal_wildlife %>% 
+  group_by(`Taxonomic Group`) %>% 
+  summarize(n= n()) %>% 
+  
+  ggplot(aes(x = `Taxonomic Group`, y = n)) +
+  geom_bar(stat = "identity")
+```
+
+How many species have the common name **leopard**?
+```{r}
+nepal_wildlife %>% 
+  select(c(`Common Name`, Family)) %>% 
+  mutate(has_leopard = stringr::str_detect(`Common Name`, stringr::regex("leopard", ignore_case = TRUE))) %>% 
+  filter(has_leopard == TRUE)
+```
+Among these, **Leopard** and **Snow Leopard** are considered to be *big cats*.
