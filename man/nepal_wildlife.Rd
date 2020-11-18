@@ -22,4 +22,8 @@ nepal_wildlife
 \description{
 A dataset containing common name, scientific name, family and taxonomic group of animals found in Nepal.
 }
+\examples{
+summary(nepal_wildlife)
+
+}
 \keyword{datasets}

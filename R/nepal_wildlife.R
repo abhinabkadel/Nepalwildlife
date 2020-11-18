@@ -11,10 +11,8 @@
 #' }
 #'
 #' @source \url{https://mol.org/regions/?region=Nepal&regionid=2f3b667a-51b4-4aaa-be9b-005765b1be65&bounds=80.0601,26.3475,88.204,30.447}
-"nepal_wildlife"
 #'
 #' @examples
 #' summary(nepal_wildlife)
 #'
-#'
-#'
+"nepal_wildlife"
