@@ -57,7 +57,7 @@ nepal_wildlife %>%
  2. Add the dataset downloaded from the **Map of Life** in _.csv_ form into the newly created **data-raw** folder. 
  3. Add a R script titled `nepal_wildlife.R` in the folder, which converts the csv to a tibble in the .R file.
     - Include `usethis::use_data()` at the bottom of this R script to create a .rda data object in the **data** folder
- 4. Check to __data__ folder in the root directory to see if *nepal_wildlife.rda* object exists. 
+ 4. Check to __data__ folder in the root directory to see if *nepal_wildlife.rda* object exists.
  
 ### Create documentation:
  1. Create a new R script called nepal_wildlife.R in the **R** folder in the root directory. 
@@ -107,6 +107,7 @@ nepal_wildlife %>%
       - Website can be found [here](https://abhinabkadel.github.io/Nepalwildlife/)
       
 #### Rerun `install()` to install the package with the necessary changes. 
+
 #### **Note:** In between these steps, I performed `check()` statements to see if there were any errors. 
 
 
