@@ -98,7 +98,7 @@ nepal_wildlife %>%
  2. Create a NEWS.md file using `use_news_md()`
  2. Run `usethis::use_version()` and select **minor** increment to set the package version to 0.1.0
       - This adds a new heading in the NEWS.md file with the package name and version nr. 
- 3. Update information to the [NEWS.md](Nepalwildlife/NEWS.md) file. 
+ 3. Update information to the [NEWS.md](/NEWS.md) file. 
  4. Build the website:
       - Activate **pkgdown** using `usethis::use_pkgdown()`
       - Build website using `pkgdown::build_site()`

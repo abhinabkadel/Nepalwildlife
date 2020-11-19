@@ -110,6 +110,144 @@
 <span class="co">#&gt; 7 Sphingid moths         174</span>
 <span class="co">#&gt; 8 Turtles (non-marine)    15</span></code></pre></div>
 </div>
+<div id="steps-used-to-build-the-package" class="section level2">
+<h2 class="hasAnchor">
+<a href="#steps-used-to-build-the-package" class="anchor"></a>Steps used to Build the package:</h2>
+<div id="initial-setup" class="section level3">
+<h3 class="hasAnchor">
+<a href="#initial-setup" class="anchor"></a>Initial setup:</h3>
+<ol>
+<li>Load devtools using <code><a href="https://devtools.r-lib.org/">library(devtools)</a></code>
+</li>
+<li>Use <code>create_package(pathname/Nepalwildlife)</code>. This created a folder named <strong>Nepalwildlife</strong> with skeleton for the package contents such as DESCRIPTION and an R project file.</li>
+<li>In the new Rstudio session that is opened, load usethis package using <code><a href="https://usethis.r-lib.org">library(usethis)</a></code>
+</li>
+<li>Set up git repo using use_git(). Perform initial commit and restart RStudio to activate the <strong>Git</strong> pane.</li>
+</ol>
+</div>
+<div id="place-the-dataset" class="section level3">
+<h3 class="hasAnchor">
+<a href="#place-the-dataset" class="anchor"></a>Place the dataset:</h3>
+<ol>
+<li>Create a directory for raw data using <code>use_data_raw()</code>
+</li>
+<li>Add the dataset downloaded from the <strong>Map of Life</strong> in <em>.csv</em> form into the newly created <strong>data-raw</strong> folder.</li>
+<li>Add a R script titled <code>nepal_wildlife.R</code> in the folder, which converts the csv to a tibble in the .R file.
+<ul>
+<li>Include <code><a href="https://usethis.r-lib.org/reference/use_data.html">usethis::use_data()</a></code> at the bottom of this R script to create a .rda data object in the <strong>data</strong> folder</li>
+</ul>
+</li>
+<li>Check to <strong>data</strong> folder in the root directory to see if <em>nepal_wildlife.rda</em> object exists.</li>
+</ol>
+</div>
+<div id="create-documentation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#create-documentation" class="anchor"></a>Create documentation:</h3>
+<ol>
+<li>Create a new R script called nepal_wildlife.R in the <strong>R</strong> folder in the root directory.</li>
+<li>Create roxygen style documentation in it, ending with the line <code>"nepal_wildlife"</code>
+<ul>
+<li>There is not need to use <code>@export</code> tag because I am not creating any function and it was advised in class not to do so.</li>
+</ul>
+</li>
+<li>Run <code>document()</code>
+</li>
+</ol>
+</div>
+<div id="tests-for-package" class="section level3">
+<h3 class="hasAnchor">
+<a href="#tests-for-package" class="anchor"></a>Tests for package:</h3>
+<ol>
+<li>
+<code>use_testthat()</code> to create a <strong>tests</strong> folder in the root directory</li>
+<li>
+<code>use_test("nepal_wildlife")</code> creates an R file with my tests in it.</li>
+<li>Write test codes using <code>expect_</code> statements to check if:
+<ul>
+<li>the variable names of the dataset are as expected.</li>
+<li>dataset is stored as a tibble</li>
+<li>the the dataset has expected number of observations.</li>
+</ul>
+</li>
+<li>Check if tests pass using <code>test()</code>
+</li>
+</ol>
+</div>
+<div id="update-description-file" class="section level3">
+<h3 class="hasAnchor">
+<a href="#update-description-file" class="anchor"></a>Update DESCRIPTION file:</h3>
+<ol>
+<li>Open DESCRIPTION file in a code editor</li>
+<li>Edit the <strong>Title</strong>, <strong>Authors</strong> and <strong>Description</strong> fields as necessary.</li>
+<li>Add license info using <code><a href="https://usethis.r-lib.org/reference/licenses.html">usethis::use_mit_license("Abhinab Kadel")</a></code>
+</li>
+<li>Add dependencies using <code>use_package()</code>. The following packages are listed under the <strong>@import</strong> option:
+<ul>
+<li>Package tests specified above use <em>dplyr</em> and <em>tibble</em> packages.</li>
+<li>Vignette uses <em>stringr</em> and <em>ggplot2</em>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div id="add-readme-and-vignette" class="section level3">
+<h3 class="hasAnchor">
+<a href="#add-readme-and-vignette" class="anchor"></a>Add README and vignette:</h3>
+<ol>
+<li>Create readme using <code>use_readme_rmd( )</code> and build it using <code>build_readme( )</code>.</li>
+<li>Create vignette using <code>use_vignette("nepal_wildlife")</code> and build it using <code>build_vignette()</code>.</li>
+</ol>
+</div>
+<div id="install-package" class="section level3">
+<h3 class="hasAnchor">
+<a href="#install-package" class="anchor"></a>Install package:</h3>
+<p>Use <code><a href="https://devtools.r-lib.org//reference/install.html">devtools::install()</a></code></p>
+</div>
+<div id="linking-local-repository-to-a-remote-repository" class="section level3">
+<h3 class="hasAnchor">
+<a href="#linking-local-repository-to-a-remote-repository" class="anchor"></a>Linking local repository to a remote repository</h3>
+<ol>
+<li>Create a remote repository on Github called <code>Nepalwildlife</code>
+</li>
+<li>Push package contents from <em>local</em> repo to <em>remote</em> repo using the instructions provided in Github.</li>
+</ol>
+</div>
+<div id="for-optional-tasks" class="section level3">
+<h3 class="hasAnchor">
+<a href="#for-optional-tasks" class="anchor"></a>For optional tasks:</h3>
+<ol>
+<li>Run <code><a href="https://usethis.r-lib.org/reference/use_code_of_conduct.html">usethis::use_code_of_conduct()</a></code> to create a code of conduct text. Then, paste it to the README file (see below)</li>
+<li>Create a NEWS.md file using <code>use_news_md()</code>
+</li>
+<li>Run <code><a href="https://usethis.r-lib.org/reference/use_version.html">usethis::use_version()</a></code> and select <strong>minor</strong> increment to set the package version to 0.1.0
+<ul>
+<li>This adds a new heading in the NEWS.md file with the package name and version nr.</li>
+</ul>
+</li>
+<li>Update information to the <a href="/NEWS.html">NEWS.md</a> file.</li>
+<li>Build the website:
+<ul>
+<li>Activate <strong>pkgdown</strong> using <code><a href="https://usethis.r-lib.org/reference/use_pkgdown.html">usethis::use_pkgdown()</a></code>
+</li>
+<li>Build website using <code><a href="https://pkgdown.r-lib.org/reference/build_site.html">pkgdown::build_site()</a></code>
+</li>
+<li>Push the contents of <em>root/docs</em> folder to the remote repository</li>
+<li>Activate Github Pages through repository settings and select <em>master/docs</em> as website source.</li>
+<li>Website can be found <a href="https://abhinabkadel.github.io/Nepalwildlife/">here</a>
+</li>
+</ul>
+</li>
+</ol>
+<div id="rerun-install-to-install-the-package-with-the-necessary-changes" class="section level4">
+<h4 class="hasAnchor">
+<a href="#rerun-install-to-install-the-package-with-the-necessary-changes" class="anchor"></a>Rerun <code>install()</code> to install the package with the necessary changes.</h4>
+</div>
+<div id="note-in-between-these-steps-i-performed-check-statements-to-see-if-there-were-any-errors" class="section level4">
+<h4 class="hasAnchor">
+<a href="#note-in-between-these-steps-i-performed-check-statements-to-see-if-there-were-any-errors" class="anchor"></a><strong>Note:</strong> In between these steps, I performed <code>check()</code> statements to see if there were any errors.</h4>
+</div>
+</div>
+</div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>

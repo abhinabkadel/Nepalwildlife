@@ -130,7 +130,7 @@ Use `devtools::install()`
     the package version to 0.1.0
       - This adds a new heading in the NEWS.md file with the package
         name and version nr.
-4.  Update information to the [NEWS.md](Nepalwildlife/NEWS.md) file.
+4.  Update information to the [NEWS.md](/NEWS.md) file.
 5.  Build the website:
       - Activate **pkgdown** using `usethis::use_pkgdown()`
       - Build website using `pkgdown::build_site()`
